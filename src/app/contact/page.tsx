@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Mail, Phone, MapPin } from "lucide-react";
 import "leaflet/dist/leaflet.css";
@@ -26,12 +26,19 @@ export default function Contact() {
     message: "",
   });
 
+  const [isClient, setIsClient] = useState(false); // Client-side check state
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(formData);
   };
 
   const position: [number, number] = [-6.9175, 107.6191];
+
+  // Set isClient to true once component is mounted (on the client side)
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <>
@@ -123,24 +130,26 @@ export default function Contact() {
           </div>
 
           {/* Map Section */}
-          <div className="mt-12 h-[400px] rounded-lg overflow-hidden">
-            <MapContainer
-              center={position}
-              zoom={13}
-              style={{
-                height: "100%",
-                width: "100%",
-              }}
-            >
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              />
-              <Marker position={position}>
-                <Popup>Bandung, West Java</Popup>
-              </Marker>
-            </MapContainer>
-          </div>
+          {isClient && (
+            <div className="mt-12 h-[400px] rounded-lg overflow-hidden">
+              <MapContainer
+                center={position}
+                zoom={13}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                }}
+              >
+                <TileLayer
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                />
+                <Marker position={position}>
+                  <Popup>Bandung, West Java</Popup>
+                </Marker>
+              </MapContainer>
+            </div>
+          )}
         </div>
       </div>
 
