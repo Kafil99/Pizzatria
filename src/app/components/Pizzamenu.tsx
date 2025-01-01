@@ -1,5 +1,6 @@
 import React from "react";
 import { Heart, ShoppingCart } from "lucide-react";
+import Image from "next/image";
 
 const pizzas = [
   {
@@ -7,51 +8,44 @@ const pizzas = [
     name: "Sausage Pizza",
     price: 7.49,
     rating: 4,
-    image:
-      "/Images/pizza1.png",
+    image: "/Images/pizza1.png",
   },
   {
     id: 2,
     name: "Cheese Overload",
     price: 8.3,
     rating: 4,
-    image:
-      "/Images/pizza2.png",
+    image: "/Images/pizza2.png",
   },
   {
     id: 3,
     name: "Italian Pizza",
     price: 6.99,
     rating: 3,
-    image:
-      "/Images/pizza4.png",
+    image: "/Images/pizza4.png",
   },
   {
     id: 4,
     name: "Super Supreme",
     price: 7.14,
     rating: 5,
-    image:
-      "/Images/pizza5.png",
+    image: "/Images/pizza5.png",
   },
   {
     id: 5,
     name: "Veggie Garden",
     price: 7.66,
     rating: 4,
-    image:
-      "/Images/pizza6.png",
+    image: "/Images/pizza6.png",
   },
   {
     id: 6,
     name: "American Favorite",
     price: 6.19,
     rating: 3,
-    image:
-      "/Images/pizza7.png",
+    image: "/Images/pizza7.png",
   },
 ];
-
 
 function StarRating({ rating }: { rating: number }) {
   return (
@@ -59,7 +53,9 @@ function StarRating({ rating }: { rating: number }) {
       {[1, 2, 3, 4, 5].map((star) => (
         <span
           key={star}
-          className={`text-sm ${star <= rating ? "text-[#ffd700]" : "text-gray-200"}`}
+          className={`text-sm ${
+            star <= rating ? "text-[#ffd700]" : "text-gray-200"
+          }`}
         >
           ★
         </span>
@@ -67,7 +63,6 @@ function StarRating({ rating }: { rating: number }) {
     </div>
   );
 }
-
 
 function PizzaCard({
   name,
@@ -84,10 +79,12 @@ function PizzaCard({
     <div className="bg-white rounded-[24px] overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.15)] transition-shadow">
       <div className="relative">
         <div className="relative h-48 bg-[#1c1c1c]">
-          <img
+          <Image
             src={image}
             alt={name}
-            className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+            layout="fill"
+            objectFit="cover"
+            className="hover:scale-110 transition-transform duration-300"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#ff4d4d]/30 to-transparent" />
         </div>
@@ -112,13 +109,12 @@ function PizzaCard({
           <StarRating rating={rating} />
         </div>
         <button className="w-full py-2 px-4 text-sm bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors">
-          read more
+          Read More
         </button>
       </div>
     </div>
   );
 }
-
 
 export default function Pizzamenu() {
   return (

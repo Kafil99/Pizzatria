@@ -1,5 +1,8 @@
 import React from "react";
-import { Instagram, Facebook, Twitter } from "lucide-react";
+import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+import Link from "next/link";
+import Image from "next/image";
+
 export function Footer() {
   return (
     <footer className="w-full bg-white px-4 py-8 border-t">
@@ -10,24 +13,24 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Regarding</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   Our Story
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   Attributes
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   Updates
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   Selection
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -36,24 +39,24 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Enterprise</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/" className="text-gray-600 hover:text-gray-900">
+                <Link href="/" className="text-gray-600 hover:text-gray-900">
                   Why Pizzaterio?
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   Partner With Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   FAQ
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   Blog
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -62,29 +65,29 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Assistance</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   Account
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   Support Center
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   Feedback
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
                   Accessibility
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -94,28 +97,30 @@ export function Footer() {
             <p className="text-gray-600 mb-4">
               Have a question or feedback?
               <br />
-              We're eager to hear from you.
+              We&rsquo;re eager to hear from you.
             </p>
             <div className="mt-6">
-              <img
+              <Image
                 src="/Images/logo.png"
                 alt="Pizzateria Logo"
-                className="h-12 w-12 mb-4"
+                width={48}
+                height={48}
+                className="mb-4"
               />
               <p className="text-sm text-gray-600">
                 Our mission is to satisfy your hunger with tasty food, delivered
                 quickly and at no charge
               </p>
               <div className="flex space-x-4 mt-4">
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <Instagram size={20} />
-                </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <Facebook size={20} />
-                </a>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  <Twitter size={20} />
-                </a>
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
+                  <FaInstagram size={20} />
+                </Link>
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
+                  <FaFacebook size={20} />
+                </Link>
+                <Link href="#" className="text-gray-600 hover:text-gray-900">
+                  <FaTwitter size={20} />
+                </Link>
               </div>
             </div>
           </div>

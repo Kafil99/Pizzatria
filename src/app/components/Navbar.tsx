@@ -1,12 +1,13 @@
 import { Menu, Search, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Image from "next/image"; 
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mobileDropdown, setMobileDropdown] = useState(false); // Separate state for mobile dropdown
+  const [mobileDropdown, setMobileDropdown] = useState(false); 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,9 +30,11 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <img
+            <Image
               src="/Images/logo.png"
               alt="Pizzateria Logo"
+              width={32} // Set appropriate width
+              height={32} // Set appropriate height
               className="h-8 w-auto"
             />
             <span className="ml-2 text-xl font-semibold">Pizzateria</span>

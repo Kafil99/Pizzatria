@@ -3,6 +3,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Footer } from "../components/Footer";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -11,7 +12,6 @@ export default function About() {
         <Navbar />
       </div>
 
-      {/* Adding padding to ensure the content starts below the navbar */}
       <main className="w-full min-h-screen bg-white pt-16">
         <section className="container mx-auto px-4 py-12 max-w-6xl">
           <div className="text-center mb-8">
@@ -19,7 +19,7 @@ export default function About() {
               ABOUT US
             </p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Let's delve deeper into
+              Let&rsquo;s delve deeper into
               <br />
               understanding Pizzateria
             </h1>
@@ -32,9 +32,11 @@ export default function About() {
             </p>
           </div>
           <div className="rounded-3xl overflow-hidden">
-            <img
+            <Image
               src="/Images/largepizza.png"
               alt="Delicious pizza with olives, bell peppers and melted cheese"
+              width={1200}
+              height={800}
               className="w-full h-auto object-cover"
             />
           </div>

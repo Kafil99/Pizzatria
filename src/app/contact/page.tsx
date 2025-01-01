@@ -10,7 +10,6 @@ import { Footer } from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 // Leaflet marker icon fix
-delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:
     "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
@@ -32,7 +31,7 @@ export default function Contact() {
     console.log(formData);
   };
 
-  const position: [number, number] = [-6.9175, 107.6191]; 
+  const position: [number, number] = [-6.9175, 107.6191];
 
   return (
     <>

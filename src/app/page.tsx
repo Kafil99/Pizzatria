@@ -6,20 +6,23 @@ import MenuSection from "./components/Selection";
 import TestimonialSection from "./components/TestimonialSection";
 import Pizzateria from "./components/Pizzatria";
 import { Footer } from "./components/Footer";
+import Image from "next/image";  
 
 export default function HomePage() {
   return (
     <>
-    <div>
-      <Navbar />
-    </div>
+      <div>
+        <Navbar />
+      </div>
 
       <div className="relative min-h-screen">
         <div className="absolute inset-0 z-0">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1513104890138-7c749659a591"
             alt="Pizza Background"
             className="w-full h-full object-cover"
+            width={1920}  
+            height={1080} 
           />
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -66,10 +69,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300">
               <div className="flex justify-center mb-6">
-                <img
-                  src="/Images/ordering.png "
+                <Image
+                  src="/Images/ordering.png"
                   alt="Convenient Ordering"
                   className="h-48 w-auto"
+                  width={192}  
+                  height={192}
                 />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
@@ -82,10 +87,12 @@ export default function HomePage() {
 
             <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 border-2 border-red-100">
               <div className="flex justify-center mb-6">
-                <img
+                <Image
                   src="/Images/delivery.png"
                   alt="Quickest Delivery"
                   className="h-48 w-auto"
+                  width={192}  
+                  height={192}
                 />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
@@ -98,10 +105,12 @@ export default function HomePage() {
 
             <div className="bg-white rounded-3xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300">
               <div className="flex justify-center mb-6">
-                <img
+                <Image
                   src="/Images/quality.png"
                   alt="Superior Quality"
                   className="h-48 w-auto"
+                  width={192}  
+                  height={192} 
                 />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
@@ -125,4 +134,3 @@ export default function HomePage() {
     </>
   );
 }
-
