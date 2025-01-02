@@ -1,13 +1,20 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import dynamic from "next/dynamic";
 import { Mail, Phone, MapPin } from "lucide-react";
 import "leaflet/dist/leaflet.css";
-
-import L from "leaflet";
 import { Footer } from "../components/Footer";
 import Navbar from "../components/Navbar";
+
+const MapContainer = dynamic(() => import("react-leaflet").then(mod => mod.MapContainer), {
+  ssr: false, 
+});
+const TileLayer = dynamic(() => import("react-leaflet").then(mod => mod.TileLayer), { ssr: false });
+const Marker = dynamic(() => import("react-leaflet").then(mod => mod.Marker), { ssr: false });
+const Popup = dynamic(() => import("react-leaflet").then(mod => mod.Popup), { ssr: false });
+
+import L from "leaflet";
 
 // Leaflet marker icon fix
 L.Icon.Default.mergeOptions({
@@ -26,7 +33,7 @@ export default function Contact() {
     message: "",
   });
 
-  const [isClient, setIsClient] = useState(false); // Client-side check state
+  const [isClient, setIsClient] = useState(false); 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,7 +42,6 @@ export default function Contact() {
 
   const position: [number, number] = [-6.9175, 107.6191];
 
-  // Set isClient to true once component is mounted (on the client side)
   useEffect(() => {
     setIsClient(true);
   }, []);
